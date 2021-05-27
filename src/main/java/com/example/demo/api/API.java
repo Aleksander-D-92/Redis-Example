@@ -1,7 +1,7 @@
 package com.example.demo.api;
 
 import com.example.demo.dto.User;
-import com.example.demo.repos.RedisRepository;
+import com.example.demo.repos.firstWay.RedisRepository;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;

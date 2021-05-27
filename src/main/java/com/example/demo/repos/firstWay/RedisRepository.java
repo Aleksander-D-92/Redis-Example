@@ -1,4 +1,4 @@
-package com.example.demo.repos;
+package com.example.demo.repos.firstWay;
 
 import com.example.demo.dto.User;
 
