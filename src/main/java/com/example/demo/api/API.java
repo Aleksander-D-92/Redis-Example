@@ -1,7 +1,7 @@
 package com.example.demo.api;
 
 import com.example.demo.dto.User;
-import com.example.demo.repos.firstWay.RedisRepository;
+import com.example.demo.repos.firstWay.UserRedisRepository;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,33 +20,33 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class API {
 
-   private final RedisRepository redisRepository;
+   private final UserRedisRepository userRedisRepository;
 
    @PostMapping("/user")
    public String createUser(@RequestBody User user) {
-      this.redisRepository.save(user);
+      this.userRedisRepository.save(user);
       return "Ok";
    }
 
    @GetMapping("/user/{id}")
    public User findById(@PathVariable String id) {
-      return this.redisRepository.findById(id);
+      return this.userRedisRepository.findById(id);
    }
 
    @GetMapping("/user/all")
    public Map<String, User> findById() {
-      return this.redisRepository.findAll();
+      return this.userRedisRepository.findAll();
    }
 
    @PutMapping("/user")
    public String updateUser(@NonNull @RequestBody User user) {
-      this.redisRepository.updateUser(user);
+      this.userRedisRepository.updateUser(user);
       return "Ok";
    }
 
    @DeleteMapping("/user/{id}")
    public String updateUser(@PathVariable String id) {
-      this.redisRepository.delete(id);
+      this.userRedisRepository.delete(id);
       return "Ok";
    }
 }

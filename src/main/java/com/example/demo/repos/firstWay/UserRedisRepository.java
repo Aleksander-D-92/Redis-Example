@@ -4,7 +4,7 @@ import com.example.demo.dto.User;
 
 import java.util.Map;
 
-public interface RedisRepository {
+public interface UserRedisRepository {
 
    void save(User user);
 

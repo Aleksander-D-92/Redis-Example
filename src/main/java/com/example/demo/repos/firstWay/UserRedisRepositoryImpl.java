@@ -9,12 +9,12 @@ import org.springframework.stereotype.Repository;
 import java.util.Map;
 
 @Repository
-public class RedisRepositoryImpl implements RedisRepository {
+public class UserRedisRepositoryImpl implements UserRedisRepository {
 
    private final HashOperations<String, String, User> hashOperations;
    public static final String USER_KEY = "user";
 
-   public RedisRepositoryImpl(
+   public UserRedisRepositoryImpl(
          @Qualifier(value = "defaultRedisTemplate") RedisTemplate<String, User> redisTemplate) {
       this.hashOperations = redisTemplate.opsForHash();
    }
